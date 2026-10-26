@@ -1,16 +1,27 @@
 {
   "name": "desktop_application",
   "version": "1.0.0",
-  "description": "",
+  "description": "Notes app built with Electron",
   "main": "main.js",
-"scripts": {
-  "start": "electron ."
-},
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --mac dmg"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Akriti Kumari",
   "license": "ISC",
   "type": "commonjs",
+  "build": {
+    "appId": "com.akriti.notesapp",
+    "productName": "Notes",
+    "files": ["main.js", "preload.js", "index.html", "renderer.js", "style.css"],
+    "mac": {
+      "target": "dmg",
+      "identity": null
+    }
+  },
   "devDependencies": {
-    "electron": "^45.0.0"
+    "electron": "^45.0.0",
+    "electron-builder": "^26.0.0"
   }
 }

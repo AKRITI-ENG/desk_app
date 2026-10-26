@@ -12,14 +12,15 @@
   "license": "ISC",
   "type": "commonjs",
   "build": {
-    "appId": "com.akriti.notesapp",
-    "productName": "Notes",
-    "files": ["main.js", "preload.js", "index.html", "renderer.js", "style.css"],
-    "mac": {
-      "target": "dmg",
-      "identity": null
-    }
-  },
+  "appId": "com.akriti.notesapp",
+  "productName": "Notes",
+  "compression": "maximum",
+  "files": ["main.js", "preload.js", "index.html", "renderer.js", "style.css"],
+  "mac": {
+    "target": "dmg",
+    "identity": null
+  }
+},
   "devDependencies": {
     "electron": "^45.0.0",
     "electron-builder": "^26.0.0"

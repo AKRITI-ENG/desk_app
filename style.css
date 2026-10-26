@@ -1,6 +1,6 @@
 body { margin: 0; display: flex; height: 100vh; font-family: sans-serif; }
 aside { width: 260px; padding: 12px; background: #f0f0f0; overflow-y: auto; }
-aside input, aside button#save { width: 100%; margin-bottom: 8px; padding: 8px; box-sizing: border-box; }
+aside input, aside button#save, aside button#export { width: 100%; margin-bottom: 8px; padding: 8px; box-sizing: border-box; }
 ul { list-style: none; padding: 0; }
 li { padding: 8px; cursor: pointer; display: flex; justify-content: space-between; }
 li:hover { background: #ddd; }

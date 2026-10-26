@@ -30,4 +30,9 @@ document.getElementById('save').onclick = async () => {
   refresh();
 };
 
+document.getElementById('export').onclick = async () => {
+  if (!title.value.trim()) return alert('Enter a title');
+  await window.notesAPI.exportNote(title.value.trim(), text.value);
+};
+
 refresh();

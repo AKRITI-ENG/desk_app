@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const path = require('path');
 const fs = require('fs');
 
@@ -29,4 +29,13 @@ ipcMain.handle('notes:save', (e, name, text) => {
 });
 ipcMain.handle('notes:delete', (e, name) => {
   fs.unlinkSync(path.join(notesDir, name));
+});
+ipcMain.handle('notes:export', async (e, name, text) => {
+  const { canceled, filePath } = await dialog.showSaveDialog({
+    defaultPath: name + '.txt',
+    filters: [{ name: 'Text', extensions: ['txt'] }]
+  });
+  if (canceled) return false;
+  fs.writeFileSync(filePath, text);
+  return true;
 });
